@@ -9,12 +9,11 @@ import logging
 logging.basicConfig(filename='data/log.txt', level=logging.DEBUG)
 
 FILENAME = f"data/{datetime.date.today()}.jpg"
-WORD_LIST = ("Love", "Allah", "Alhamdulillah", "Islam", "Peace", "Fake World", "AI", "Deception", "Houssem",
-             "Rym", "Chastity", "Respect", "Clarity", "Achieve", "Persistence", "Truth", "Family",
-             "Determination", "Passion", "Positivity", "Patience", "Strength", "Confidence", "Wealth",
-             "Heaven", "Honor", "Hell", "Intelligence", "Creativity", "Righteousness", "Knowledge", "Wisdom",
-             "Majesty", "Mindfulness", "Resilience", "Sincerity", "Culture", "Death", "Destiny",
-             "Timeless", "The End", "Endless", "Darkness", "Children", "Mystery", "Battlefield")
+WORD_LIST = ("Love", "Allah", "Islam", "Peace", "Fake News", "Chastity", "Respect", 
+	"Clarity", "Achievement", "Persistence", "Truth", "Family", "Wealth",
+	"Determination", "Passion", "Positivity", "Patience", "Strength", "Confidence",
+	"Honor", "Creativity", "Righteousness", "Knowledge", "Wisdom", "Honesty",
+	"Mindfulness", "Resilience", "Sincerity", "Culture", "Destiny", "Time")
 chosen_word = random.choice(WORD_LIST)
 
 ## get an image from unsplash
@@ -25,12 +24,10 @@ headers = {
     "Authorization": "Client-ID " + os.environ.get("UNSPLASH_ACCESS_KEY")
 }
 query = f"{chosen_word} wallpaper"
-if chosen_word == "Rym":
-	query = "Travel wallpaper"
-elif chosen_word == "Houssem":
-	query = "Nebula wallpaper"
-elif chosen_word == "Alhamdulillah":
-	query = "Allah wallpaper"
+#if chosen_word == "Rym":
+#	query = "Travel wallpaper"
+#elif chosen_word == "Houssem":
+#	query = "Nebula wallpaper"
 params = {
     "query": query,
 }
